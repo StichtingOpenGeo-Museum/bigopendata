@@ -1,0 +1,89 @@
+{
+	"template": "logstash-kv6-*",
+		"settings": {
+			"number_of_shards": 5,
+			"number_of-replicas": 1,
+			"index.refresh_interval": "5s"
+		},
+		"mappings": {
+			"logs": {
+				"properties": {
+					"receive": {
+						"type": "date",
+						"format": "basic_date_time"
+					},
+					"message": {
+						"type": "date",
+						"format": "basic_date_time"
+					},
+					"vehicle": {
+						"type": "date",
+						"format": "basic_date_time"
+					},
+					"messagetype": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"operatingday": {
+						"type": "date",
+						"format": "YYYY-MM-dd"
+					},
+					"dataownercode": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"lineplanningnumber": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"journeynumber": {
+						"type": "integer"
+					},
+					"reinforcementnumber": {
+						"type": "integer"
+					},
+					"userstopcode": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"passagesequencenumber": {
+						"type": "integer"
+					},
+					"distancesincelastuserstop": {
+						"type": "integer"
+					},
+					"punctuality": {
+						"type": "integer"
+					},
+					"rd_x": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"rd_y": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"blockcode": {
+						"type": "integer"
+					},
+					"vehiclenumber": {
+						"type": "integer"
+					},
+					"wheelchairaccessible": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"source": {
+						"type": "string",
+						"index": "not_analyzed"
+					},
+					"numberofcoaches": {
+						"type": "integer"
+					},
+					"location": {
+						"type": "geo_point"
+					}
+				}
+			}
+		}
+}
