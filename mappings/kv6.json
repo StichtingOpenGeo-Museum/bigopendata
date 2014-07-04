@@ -17,8 +17,7 @@
 						"format": "basic_date_time"
 					},
 					"vehicle": {
-						"type": "date",
-						"format": "basic_date_time"
+						"type": "date"
 					},
 					"messagetype": {
 						"type": "string",
@@ -86,4 +85,5 @@
 				}
 			}
 		}
+	}
 }
