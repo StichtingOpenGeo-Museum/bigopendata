@@ -1,0 +1,14 @@
+{
+    "aggs": {
+        "trips_active": {
+            "cardinality": {
+                "field": "vehiclenumber"
+            }
+        },
+        "aggs": {
+                "max" : {
+                    "field": "vehicle"
+                 }
+        }
+    }
+}
