@@ -6,7 +6,7 @@
 			"index.refresh_interval": "5s"
 		},
 		"mappings": {
-			"logs": {
+			"kv6": {
 				"properties": {
 					"receive": {
 						"type": "date",
