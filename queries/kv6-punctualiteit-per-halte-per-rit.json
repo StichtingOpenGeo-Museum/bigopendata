@@ -1,0 +1,35 @@
+{
+    "aggs": {
+        "last_value": {
+            "max": {
+                "field": "vehicle"
+            }
+        }
+    },
+    "fields": [
+        "vehicle",
+        "userstopcode",
+        "punctuality"
+    ],
+    "filter": {
+        "bool": {
+            "must": [
+                {
+                    "term": {
+                        "lineplanningnumber": "6"
+                    }
+                },
+                {
+                    "term": {
+                        "journeynumber": 4642
+                    }
+                },
+                {
+                    "term": {
+                        "dataownercode": "htm"
+                    }
+                }
+            ]
+        }
+    }
+}
