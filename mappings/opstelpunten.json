@@ -1,0 +1,23 @@
+{
+    "mappings": {
+        "location": {
+            "properties": {
+                "location": {
+                    "precision": "1m",
+                    "tree": "quadtree",
+                    "type": "geo_shape"
+                },
+                "name": {
+                    "index": "not_analyzed",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "settings": {
+        "index.refresh_interval": "5s",
+        "number_of-replicas": 0,
+        "number_of_shards": 1
+    },
+    "template": "opstelpunten"
+}
