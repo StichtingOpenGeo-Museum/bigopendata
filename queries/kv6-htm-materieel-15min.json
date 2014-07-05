@@ -1,0 +1,80 @@
+{
+    "aggs": {
+        "vehicles_running": {
+            "aggs": {
+                "avenio_count": {
+                    "aggs": {
+                        "vehicle_count": {
+                            "cardinality": {
+                                "field": "vehiclenumber"
+                            }
+                        }
+                    },
+                    "filter": {
+                        "range": {
+                            "vehiclenumber": {
+                                "gte": 5000,
+                                "lte": 5999
+                            }
+                        }
+                    }
+                },
+                "bus_count": {
+                    "aggs": {
+                        "vehicle_count": {
+                            "cardinality": {
+                                "field": "vehiclenumber"
+                            }
+                        }
+                    },
+                    "filter": {
+                        "range": {
+                            "vehiclenumber": {
+                                "gte": 0,
+                                "lte": 2999
+                            }
+                        }
+                    }
+                },
+                "gtl_count": {
+                    "aggs": {
+                        "vehicle_count": {
+                            "cardinality": {
+                                "field": "vehiclenumber"
+                            }
+                        }
+                    },
+                    "filter": {
+                        "range": {
+                            "vehiclenumber": {
+                                "gte": 3000,
+                                "lte": 3999
+                            }
+                        }
+                    }
+                },
+                "rr_count": {
+                    "aggs": {
+                        "vehicle_count": {
+                            "cardinality": {
+                                "field": "vehiclenumber"
+                            }
+                        }
+                    },
+                    "filter": {
+                        "range": {
+                            "vehiclenumber": {
+                                "gte": 4000,
+                                "lte": 4999
+                            }
+                        }
+                    }
+                }
+            },
+            "date_histogram": {
+                "field": "vehicle",
+                "interval": "15m"
+            }
+        }
+    }
+}
