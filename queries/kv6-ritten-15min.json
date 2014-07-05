@@ -1,0 +1,17 @@
+{
+    "aggs": {
+        "trips_active_per_15m": {
+            "date_histogram": {
+                "field": "vehicle",
+                "interval": "15m"
+            },
+            "aggs": {
+                "trips_active": {
+                    "cardinality" : {
+                        "script": "doc['dataownercode'].value + '|' + doc['lineplanningnumber'].value + '|' + doc['journeynumber'].value"
+                    }
+                }
+            }
+        }
+    }
+}
